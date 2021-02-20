@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DailyHire</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--=======================================  ICON  ==================================================-->
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+      <!--=======================================  NAV BAR  ===============================================-->
+      <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+      <!-- theme stylesheet-->
+      <link rel="stylesheet" href="stylesheets/navBar.css" id="theme-stylesheet">
+      <link rel="stylesheet" href="stylesheets/profile.css">
+      <!--=======================================  DATE PICKER  ===========================================-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet"
+            type="text/css" />
+      <!--=======================================  FONT AWESOME  ===========================================-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+      <%- include('partials/navBarWorker') %>
+
+      <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                  <div class="container-fluid">
+                        <h2 class="no-margin-bottom">Profile</h2>
+                  </div>
+            </header>
+
+
+            <!-- Forms Section-->
+            <section class="forms">
+                  <div class="container-fluid">
+                        <div class="row">
+                              <!-- Basic Form-->
+                              <div class="col-lg-8">
+                                    <div class="card">
+
+                                          <div class="card-body">
+
+                                                <form class="validation" enctype="multipart/form-data" method="post"
+                                                      action="/photos/uploadPhoto">
+
+                                                      <div class="d-flex justify-content-center" id="uploadWrapper">
+                                                            <img src="" alt="Avatar" id="profilePhoto">
+                                                            <button type="button" class="btn btn-default btn-circle"><i
+                                                                        class="fas fa-plus"></i>
+                                                                  <input type="file" name="img" id="img">
+                                                      </div>
+
+
+
+
+
+
+                                                      <div class="form-group">
+                                                            <label class="form-control-label">Name</label>
+                                                            <input type="text" class="form-control" id="nameEdit">
+                                                            <div class="invalid-feedback">Please provide a valid name.
+                                                            </div>
+                                                      </div>
+
+
+                                                      <div class="form-group">
+                                                            <label class="form-control-label">Address</label>
+                                                            <input type="text" id="address-input" />
+                                                            <div id="errorAddress" class="invalid-feedback">An address
+                                                                  is required.</div>
+                                                      </div>
+
+
+                                                      <div class="form-group">
+                                                            <label class="form-control-label">Email</label>
+                                                            <input type="text" class="form-control" id="emailEdit"
+                                                                  disabled>
+                                                      </div>
+
+                                                      <div class="row">
+                                                            <div class="form-group col-md-6">
+                                                                  <label class="form-control-label">Phone Number</label>
+                                                                  <input type="number" class="form-control"
+                                                                        id="phoneEdit">
+                                                                  <div class="invalid-feedback">Phone number must be at
+                                                                        least 9 digits.
+                                                                  </div>
+                                                            </div>
+
+
+                                                            <div class="form-group col-md-6">
+                                                                  <label class="form-control-label">Gender</label>
+                                                                  <select id="inputState"
+                                                                        class="form-control shadow-none">
+                                                                        <option id="maleOption">Male</option>
+                                                                        <option id="femaleOption">Female</option>
+                                                                  </select>
+                                                            </div>
+
+                                                      </div>
+
+                                                      <div class="form-group">
+                                                            <label class="form-control-label">Birthdate</label>
+                                                            <div id="datepicker" class="input-group date"
+                                                                  data-date-format="dd-mm-yyyy">
+                                                                  <input class="form-control shadow-none" type="text"
+                                                                        readonly id="startDate" />
+                                                                  <span class="input-group-addon"><i
+                                                                              class="glyphicon glyphicon-calendar"></i></span>
+                                                                  <div class="invalid-feedback">Birthdate is required.
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+
+                                                      <div class="form-group">
+                                                            <label class="form-control-label">Password</label>
+
+                                                            <input type="password" class="form-control" id="passEdit">
+
+                                                            <span toggle="#password-field"
+                                                                  class="fa fa-fw fa-eye field-icon toggle-password"></span>
+
+                                                            <div class="invalid-feedback">Password must be at least 4
+                                                                  digits and without special characters.</div>
+
+
+                                                      </div>
+
+
+
+                                                      <div class="form-group">
+                                                            <input type="button" value="Update Profile"
+                                                                  class="btn btn-primary" id="submitService"
+                                                                  onclick="updateUser()">
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <!-- WORKER PROFILE SIDE -->
+
+                              <div class="col-lg-3">
+                                    <div class="card">
+                                          <div class="card-body">
+
+                                                <div class="form-group">
+                                                      <label class="form-control-label">Client Raiting</label>
+                                                      <br>
+                                                      <div class="stars-outer2" id="stars-outer2">
+                                                            <div class="stars-inner2"></div>
+                                                      </div>
+                                                      <label class="form-control-label" id="noEvaluations">No
+                                                            evaluations</label>
+
+                                                </div>
+
+                                                <div class="form-group" id="workerDiv">
+                                                      <label class="form-control-label">Worker Raiting</label>
+                                                      <br>
+                                                      <div class="stars-outer" id="stars-outer">
+                                                            <div class="stars-inner"></div>
+                                                      </div>
+                                                      <label class="form-control-label" id="ratingOpen">No
+                                                            evaluations</label>
+
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+
+                        </div>
+                  </div>
+            </section>
+
+
+
+      </div>
+      </div> <!-- Cloose div= class"d-flex" -->
+
+      <!-- Sweet Alert -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <!-- Address Auto-complete -->
+      <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+      <!-- JavaScript files -->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="vendor/popper.js/umd/popper.min.js"> </script>
+      <!--<script src="vendor/jquery/jquery.min.js"></script> -->
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+      <!-- Date Picker -->
+      <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+      <!-- Main File -->
+      <script src="javascripts/navBarWorker.js"></script>
+      <script src="javascripts/profileWorker.js"></script>
+
+
+</body>
+
+</html>

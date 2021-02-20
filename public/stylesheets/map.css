@@ -1,0 +1,151 @@
+/*
+    * ==========================================================
+    *     FORM PAGE
+    * ==========================================================
+    */
+    
+    button,
+    input {
+      outline: none !important;
+    }
+    
+    .card {
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /*=== Helpers ===*/
+
+    section {
+      padding: 50px 0;
+    }
+    
+    .card-body {
+      padding: 1.25rem;
+      height: 72vh;
+    }
+
+/*
+    * ==========================================================
+    *    MAP
+    * ==========================================================
+    */
+
+    #gmap {
+      height: 100%;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /*
+    * ==========================================================
+    *    INFO WINDOW
+    * ==========================================================
+    */
+
+    /* Just use .gm-style-iw */ 
+  .gm-style-iw {
+    width: 400px; 
+    min-height: 150px;
+    padding: 10px;
+  }
+
+  .gm-ui-hover-effect {
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+  }
+
+    #picture {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 20px;
+    }
+
+    #label {
+      margin-right: 5px;
+      font-weight: bold;
+      color: rgb(61, 61, 61);;
+    }
+
+    .stars-outer {
+      display: inline-block;
+      position: relative;
+    }
+     
+    .stars-outer::before {
+      font-family: FontAwesome;
+      font-weight: 900;
+      content: "\f005 \f005 \f005 \f005 \f005";
+      
+    }
+     
+    .stars-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+    }
+     
+    .stars-inner::before {
+      font-family: FontAwesome;
+      font-weight: 900;
+      content: "\f005 \f005 \f005 \f005 \f005";
+      color: orange;
+    }
+
+    #ratingOpen {
+      margin-left: 5px;
+    }
+
+    #sendMessage {
+      text-align: center;
+      width: 150px;
+      height: 30px; 
+      background-color: #2292A4;
+      border-color: #2292A4 ;
+      font-size: medium;
+      line-height: 1em;
+      margin-bottom: 10px;
+    }
+
+    #sendMessage:hover {
+      background-color: #333333;
+      border-color: #333333 ;
+    }
+
+    #messageContent {
+      border: 1px solid #aaaeb3;
+      border-radius: 0.25rem;
+      font-size: medium;
+      padding: 5px;
+    }
+
+    #messageContent:focus {
+      border: 1px solid #aaaeb3;
+      border-radius: 0.25rem;
+      font-size: medium;
+      padding: 5px;
+      outline: none;
+    }
+
+    /*
+    * ==========================================================
+    *    FILTERS
+    * ==========================================================
+    */
+
+    #titles, #titles2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #titles2 {
+      margin-top: 20px;
+    }

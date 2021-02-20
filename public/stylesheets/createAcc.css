@@ -1,0 +1,231 @@
+.register-form{
+      width: 290px;
+      max-height: 680px;
+}
+
+.register-form-title {
+      font-family: Poppins-Bold;
+      font-size: 24px;
+      color: #333333;
+      line-height: 1.2;
+      text-align: center;
+      width: 100%;
+      height: fit-content;
+      display: block;
+      padding-bottom: 54px;
+    }
+
+    .ap-icon-pin {
+      display: none;
+    }
+    
+    /*//////////////////////////////////////////////////////////////////
+[ GENDER ]*/
+
+
+.onoffswitch {
+      position: relative; 
+      width: 100%;
+      -webkit-user-select:none; 
+      -moz-user-select:none; 
+      -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+}
+
+.onoffswitch-label {
+      display: block; 
+      overflow: hidden; 
+      cursor: pointer;   
+      border-radius: 25px;
+}
+
+.onoffswitch-inner {
+      display: block; 
+      width: 200%; 
+      margin-left: -100%;
+      transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+      display: block; 
+      float: left; 
+      width: 50%; 
+      height: 50px; 
+      padding: 0; 
+      line-height: 50px;
+      font-size: 15px; 
+      color: white; 
+      font-family: Poppins-Medium; 
+      box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+      content: "Male";
+      padding-left: 68px;
+      background-color: #E6E6E6; 
+      color: #2292A4;
+}
+
+.onoffswitch-inner:after {
+      content: "Female";
+      padding-left: 68px;
+      background-color: #E6E6E6; 
+      color: rgb(204, 99, 218);
+      text-align: left;
+}
+
+.onoffswitch-switch {
+      display: block; 
+      width: 39px; 
+      margin: 5.5px;
+      background: rgb(204, 99, 218);
+      position: absolute; 
+      top: 0; 
+      bottom: 0;
+      left: 0;
+      border: 2px solid #E6E6E6; 
+      border-radius: 25px;
+      transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+      margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+      right: 240px; 
+      background-color: #2292A4; 
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ DATE ]*/
+
+.datepicker {
+  background-color: #E6E6E6 !important;
+  box-sizing: border-box !important;
+  border-radius: 25px !important;
+  z-index: 1;
+}
+
+.dateBirth{
+  padding: 0 15px 0 68px !important;
+  background-color: #E6E6E6 ;
+  border-radius: 25px !important;
+  width: 100%;
+
+}
+
+
+::placeholder {
+  color: #BDBDBD;
+  opacity: 1;
+  
+}
+
+thead tr:nth-child(2) {
+  background-color: #2292A4 !important;
+}
+
+thead tr:nth-child(3) th {
+  color: #2292A4 !important;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.next {
+  background-color: #2292A4 !important;
+  display: inline-block ;
+}
+
+.prev {
+  background-color: #2292A4 !important;
+  display: inline-block ;
+}
+
+.dow,
+.old-day,
+.day,
+.new-day {
+  
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 0px !important;
+}
+
+.old-day:hover,
+.day:hover,
+.new-day:hover,
+.month:hover,
+.year:hover,
+.decade:hover,
+.century:hover {
+  border-radius: 50% !important;
+  background-color: #eee
+}
+
+.active {
+  border-radius: 50% !important;
+  background-image: linear-gradient(#333333, #333333) !important;
+  color: #fff !important
+}
+
+.prev,
+.next,
+.datepicker-switch {
+  border-radius: 0 !important;
+  padding: 20px 10px !important;
+  text-transform: uppercase;
+  font-family: Montserrat-Bold;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  opacity: 0.9,
+}
+
+.prev:hover,
+.next:hover,
+.datepicker-switch:hover {
+  background-color: inherit !important;
+  opacity: 1
+}
+
+
+/*------------------------------------------------------------------
+[ Phone Number ]*/
+
+#phoneCreate::-webkit-outer-spin-button,
+#phoneCreate::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+
+
+@media (max-width: 992px) {
+
+  .register-form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-form {
+    width: 100%;
+  }
+
+}

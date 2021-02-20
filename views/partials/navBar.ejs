@@ -1,0 +1,142 @@
+<!-- Main Navbar-->
+<header class="header">
+  <nav class="navbar">
+    <!-- Search Box-->
+
+    <div class="container-fluid">
+      <div class="navbar-holder d-flex align-items-center justify-content-between">
+        <!-- Navbar Header-->
+        <div class="navbar-header">
+          <!-- Navbar Brand -->
+          <a href="clientMap" class="navbar-brand d-none d-sm-inline-block">
+            <div class="brand-text d-none d-lg-inline-block"><strong>DailyHire</strong></div>
+            <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>DH</strong></div>
+          </a>
+          <!-- Toggle Button-->
+          <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+        </div>
+
+        <!-- Navbar Menu -->
+        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
+          <!-- Notifications-->
+          <div id="allNotifications">
+            <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i
+                  class="fas fa-bell"></i><span class="badge bg-red badge-corner" style="font-weight:bold"
+                  id="notificationNumber"></span></a>
+              <ul aria-labelledby="notifications" class="dropdown-menu" id="notificationsList">
+
+              </ul>
+            </li>
+
+          </div>
+          <!--
+              <-- Languages dropdown    ->
+              <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                  class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span
+                    class="d-none d-sm-inline-block">English</span></a>
+                <ul aria-labelledby="languages" class="dropdown-menu">
+                  <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English"
+                        class="mr-2">German</a></li>
+                  <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English"
+                        class="mr-2">French </a></li>
+                </ul>
+              </li>
+
+            -->
+
+
+
+          <!-- Logout    -->
+          <li class="nav-item" id="workerPopUP"><a href="#" class="nav-link logout"> <span
+                class="d-none d-sm-inline">Worker</span><i class="fas fa-exchange-alt"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class=" d-flex ">
+  <!-- Side Navbar -->
+  <nav class="side-navbar">
+    <!-- Sidebar Header-->
+    <div class="sidebar-header d-flex align-items-center">
+      <div class="avatar"><img src="" alt="..." class="img-fluid rounded-circle" id="navPhoto"> </div>
+      <div class="title">
+        <h1 class="h4" id="nameUser"></h1>
+        <p>Client</p>
+      </div>
+    </div>
+
+    <!-- Sidebar Navidation Menus-->
+    <span class="heading">Main</span>
+    <ul class="list-unstyled">
+      <li id="map" class="active"><a href="clientMap"> <i class="	fas fa-map-marker-alt"></i>Map </a></li>
+      <li id="createService"><a href="createService"> <i class="fa fa-plus-circle"></i>Announce Service </a></li>
+      <li id="myServices"><a href="myServices"> <i class="fas fa-tools"></i>My Services </a></li>
+      <li id="serviceHistory"><a href="serviceHistory"> <i class="fas fa-history"></i>Service History </a></li>
+
+    </ul>
+
+    <span class="heading">Accout</span>
+    <ul class="list-unstyled">
+      <li id="profile"> <a href="profile"> <i class="fas fa-user"></i>Profile </a></li>
+      <li id="messages"> <a href="messages"> <i class="fas fa-comment-alt"></i>Messages </a></li>
+      <li onclick="logout()"> <a href="/"> <i class="fas fa-sign-in-alt"></i>Logout </a></li>
+    </ul>
+
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalWorker" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Want to become a worker?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label class="form-control-label">Work Area</label>
+            <select id="inputState2" class="form-control shadow-none">
+              <option disabled selected>Choose...</option>
+              <option>Alfaiate</option>
+              <option>Canalizador</option>
+              <option>Carpinteiro</option>
+              <option>Eletricista</option>
+              <option>Estofador</option>
+              <option>Estucador</option>
+              <option>Jardineiro</option>
+              <option>Ladrilhador</option>
+              <option>Lenhador</option>
+              <option>Marceneiro</option>
+              <option>Marmorista</option>
+              <option>Mecânico</option>
+              <option>Pintor</option>
+              <option>Sapateiro</option>
+              <option>Serralheiro</option>
+              <option>Vidraceiro</option>
+            </select>
+            <div id="errorSelect2" class="invalid-feedback">Please make a
+              selection.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-control-label">Experience</label>
+            <select id="selectExperience" class="form-control shadow-none">
+              <option disabled selected>When you start working...</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="registerWorker">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>

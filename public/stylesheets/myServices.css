@@ -1,0 +1,278 @@
+/*
+    * ==========================================================
+    *     FORM PAGE
+    * ==========================================================
+    */
+
+.card {
+  margin-bottom: 30px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1),
+    -1px 0 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/*=== Helpers ===*/
+
+section {
+  padding: 50px 0;
+}
+
+.card-body {
+  padding: 1.25rem;
+  height: 70vh;
+}
+
+@media (max-width: 992px) {
+  .card-body {
+    height: 50vh;
+  }
+}
+
+/*
+    * ==========================================================
+    *     TABLES
+    * ==========================================================
+    */
+
+table {
+  table-layout: fixed;
+}
+
+#tableOpen tr {
+  background-color: #fff;
+}
+
+#tableOpen tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#tableOpen td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tablePending td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tableCompleted td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td {
+  cursor: pointer;
+}
+
+#tablePending tr {
+  background-color: #fff;
+}
+
+#tablePending tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#tableCompleted tr {
+  background-color: #fff;
+}
+
+#tableCompleted tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#tableAvailable tr {
+  background-color: #fff;
+}
+
+#tableAvailable td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tableAvailable tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 90%;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+#tablePending,
+#tableCompleted,
+#tableOpen td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*
+    * ==========================================================
+    *     MODAL
+    * ==========================================================
+    */
+
+.modal label {
+  color: black;
+}
+
+#noWorkers {
+  display: none;
+}
+
+#approveWorker {
+  background-color: #2292a4;
+  border-color: #2292a4;
+}
+
+#approveWorker:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+#cancelService {
+  background-color: #dd635a;
+  border-color: #dd635a;
+}
+
+#cancelService:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+/*
+    * ==========================================================
+    *     MODAL TABLES
+    * ==========================================================
+    */
+
+#workersPending th {
+  font-size: small;
+}
+
+#workerOpen th {
+  font-size: small;
+}
+
+#clientPending th {
+  font-size: small;
+}
+
+#clientOpen th {
+  font-size: small;
+}
+
+#star1,
+#star2,
+#star3,
+#star4,
+#star5 {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  color: orange;
+}
+
+#workerOpen,
+#workersPending,
+#clientPending,
+#clientOpen td,
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#messageContent {
+  border: 1px solid #aaaeb3;
+  border-radius: 0.25rem;
+  font-size: medium;
+  padding: 5px;
+}
+
+#messageContent:focus {
+  border: 1px solid #aaaeb3;
+  border-radius: 0.25rem;
+  font-size: medium;
+  padding: 5px;
+  outline: none;
+}
+
+#completeService,
+#rateClient {
+  background-color: #2292a4;
+  border-color: #2292a4;
+}
+
+#completeService:hover,
+#rateClient:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+/*
+    * ==========================================================
+    *     PROFILE MODAL
+    * ==========================================================
+    */
+
+#picture {
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#label {
+  margin-right: 5px;
+  font-weight: bold;
+  color: rgb(61, 61, 61);
+}
+
+#information {
+  text-align: left;
+}
+
+.stars-outer {
+  display: inline-block;
+  position: relative;
+}
+
+.stars-outer::before {
+  font-family: FontAwesome;
+  font-weight: 900;
+  content: "\f005 \f005 \f005 \f005 \f005";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  font-family: FontAwesome;
+  font-weight: 900;
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: orange;
+}
+
+#ratingOpen {
+  margin-left: 5px;
+}

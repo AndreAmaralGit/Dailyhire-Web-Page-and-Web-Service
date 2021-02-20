@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DailyHire</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--=======================================  ICON  ==================================================-->
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+      <!--=======================================  NAV BAR  ===============================================-->
+      <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+      <!-- theme stylesheet-->
+      <link rel="stylesheet" href="stylesheets/navBar.css" id="theme-stylesheet">
+      <link rel="stylesheet" href="stylesheets/messages.css">
+
+</head>
+
+<body>
+
+      <%- include('partials/navBarWorker') %>
+
+      <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                  <div class="container-fluid">
+                        <h2 class="no-margin-bottom">Messages</h2>
+                  </div>
+            </header>
+
+
+            <!-- Forms Section-->
+            <section class="forms">
+                  <div class="container-fluid">
+                        <div class="row">
+
+                              <!-- All chats-->
+                              <div class="col-lg-3">
+                                    <div class="card">
+                                          <div class="card-body">
+
+                                                <!--  Lista de chats -->
+                                                <ul class="ul" id="chats"></ul>
+
+
+
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <!-- Open chat-->
+                              <div class="col-lg-7">
+                                    <div class="card">
+                                          <div class="card-body">
+                                                <div id="secondCard">
+                                                      <div class="d-flex align-items-center">
+                                                            
+                                                            <h5 id="workerName"> Name of the worker </h5>
+
+                                                      </div>
+                                                      <hr class="topHr">
+
+                                                      <!--  Lista de mensagens -->
+                                                      <ul class="ul" id="listMessages"></ul>
+
+                                                      <i  id="typing"></i>
+
+                                                      <!--  input com e botão de submit-->
+                                                      <div id="bottomLine">
+                                                            <hr class="bottomHr">
+                                                      </div>
+
+                                                      <div class="send">
+                                                            <input class="text col-lg-9" autofocus="" id="menssagem"
+                                                                  autocomplete="off" placeholder="Write a message">
+                                                            <button class="btn col-lg-2"
+                                                                  id="enviar_menssagem">Send</button>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+
+                        </div>
+                  </div>
+            </section>
+
+
+
+      </div>
+      </div> <!-- Cloose div= class"d-flex" -->
+
+      <!-- Sweet Alert -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <!-- JavaScript files -->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="vendor/popper.js/umd/popper.min.js"> </script>
+      <!--<script src="vendor/jquery/jquery.min.js"></script> -->
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+      <!-- Main File -->
+      <script src="javascripts/navBarWorker.js"></script>
+
+      <!--  importar o client do socketIO-->
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="javascripts/messages.js"></script>
+
+
+
+
+</body>
+
+</html>

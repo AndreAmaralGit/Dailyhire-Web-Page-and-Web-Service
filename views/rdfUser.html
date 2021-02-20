@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>RDF User</title>
+</head>
+
+<body>
+
+      <h2 style="margin-left: 10px;">User</h2>
+
+      <div style="padding-left: 5%;">
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">identifier: </h3>
+                  <p style="padding-top: 5px;" id="identifier"> </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">name: </h3>
+                  <p style="padding-top: 5px;" id="name"> </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">serviceType: </h3>
+                  <p style="padding-top: 5px;" id="serviceType"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">typeOfUser: </h3>
+                  <p style="padding-top: 5px;" id="typeOfUser"> 0 </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">ratingCountAsClient: </h3>
+                  <p style="padding-top: 5px;" id="ratingCountAsClient"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">ratingValueAsClient: </h3>
+                  <p style="padding-top: 5px;" id="ratingValueAsClient"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">ratingCountAsWorker: </h3>
+                  <p style="padding-top: 5px;" id="ratingCountAsWorker"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">ratingValueAsWorker: </h3>
+                  <p style="padding-top: 5px;" id="ratingValueAsWorker"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">yearsOfExperience: </h3>
+                  <p style="padding-top: 5px;" id="yearsOfExperience"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">offers: </h3>
+                  <p style="padding-top: 5px;" id="offers"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">appliesFor: </h3>
+                  <p style="padding-top: 5px;" id="appliesFor"> null</p>
+            </div>
+
+
+
+
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+      <script>
+
+            $(document).ready(function () {
+
+                  var dadosUser = {
+                        "_id": window.location.pathname.substring(6)
+                  };
+
+                  $.ajax({
+                        url: "http://localhost:8080/users/findUser",
+                        type: "POST", //METODO DA API
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(dadosUser),
+                        success: function (response) {
+
+                              document.getElementById('identifier').innerHTML = response._id
+                              document.getElementById('name').innerHTML = response.name
+
+                              if (response.workerState == true) {
+
+                                    document.getElementById('typeOfUser').innerHTML = 1
+
+
+                                    $.ajax({
+                                          url: "http://localhost:8080/workers/findWorkerbyUser",
+                                          type: "POST", //METODO DA API
+                                          contentType: "application/json; charset=utf-8",
+                                          data: JSON.stringify(dadosUser),
+                                          success: function (response1) {
+
+                                                document.getElementById('serviceType').innerHTML = response1[0].area
+
+                                                if (!(response1[0].ratingCounter == null)) {
+                                                      document.getElementById('ratingCountAsWorker').innerHTML = response1[0].ratingCounter
+                                                      document.getElementById('ratingValueAsWorker').innerHTML = response1[0].ratingTotal
+                                                }
+
+                                                if (!(response1[0].experience == null)) {
+                                                      document.getElementById('yearsOfExperience').innerHTML = response1[0].experience
+                                                }
+
+                                                var dadosWorker = {
+                                                      "worker": response1[0]._id
+                                                };
+
+                                                $.ajax({
+                                                      url: "http://localhost:8080/relations/allRelationsbyWorker",
+                                                      type: "POST", //METODO DA API
+                                                      contentType: "application/json; charset=utf-8",
+                                                      data: JSON.stringify(dadosWorker),
+                                                      success: function (response3) {
+
+                                                            if (!(response3.length == 0)) {
+
+                                                                  var listIDS = "";
+
+                                                                  for (var i = 0; i < response3.length; i++) {
+                                                                        listIDS = listIDS + response3[i].service + ", "
+                                                                  }
+
+                                                                  document.getElementById('appliesFor').innerHTML = listIDS
+
+                                                            }
+
+
+                                                      },
+                                                      error: function (jqXHR, textStatus, errorThrown) {
+
+
+                                                      }
+                                                });
+
+
+                                          },
+                                          error: function (jqXHR, textStatus, errorThrown) {
+
+
+                                          }
+                                    });
+
+                              }
+
+                              if (!(response.ratingCounter == null)) {
+                                    document.getElementById('ratingCountAsClient').innerHTML = response.ratingCounter
+                                    document.getElementById('ratingValueAsClient').innerHTML = response.ratingTotal
+                              }
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        }
+                  });
+
+                  var dadosUser2 = {
+                        "user": window.location.pathname.substring(6)
+                  };
+
+                  $.ajax({
+                        url: "http://localhost:8080/services/allServicesbyUser",
+                        type: "POST", //METODO DA API
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(dadosUser2),
+                        success: function (response2) {
+
+
+                              if (!(response2.length == 0)) {
+
+                                    var listIDS = "";
+
+                                    for (var i = 0; i < response2.length; i++) {
+                                          listIDS = listIDS + response2[i]._id + ", "
+                                    }
+
+                                    document.getElementById('offers').innerHTML = listIDS
+
+                              }
+
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        }
+                  });
+
+
+            });
+
+
+      </script>
+
+</body>
+
+</html>

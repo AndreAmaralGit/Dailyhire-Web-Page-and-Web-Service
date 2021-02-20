@@ -1,0 +1,123 @@
+
+     /*
+    * ==========================================================
+    *     FORM PAGE
+    * ==========================================================
+    */
+    
+    input {
+      outline: none !important;
+    }
+    
+    .card {
+      height: 70vh;
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /*=== Helpers ===*/
+
+    section {
+      padding: 50px 0;
+    }
+    
+    .card-body {
+      padding: 1.25rem;
+    }
+
+      /*
+    * ==========================================================
+    *     CHAT
+    * ==========================================================
+    */
+
+    #secondCard {
+      visibility: hidden;
+    }
+
+    #workerName {
+      margin: 0;
+      margin-left: 20px;
+    }
+
+    .send {
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      bottom: 0;
+      margin-top: 1rem;
+      margin-bottom: 20px;
+  }
+
+  input.text {
+      width: 80%;
+      margin: 0;
+      padding: 0;
+      padding: 5px;
+      border-radius: 0.25rem;
+      border: 1px solid #aaaeb3;
+      font-size: 1rem;
+      font-family: "Poppins", sans-serif;
+  }
+
+  #listMessages {
+      list-style-type: none;
+      width: 100%;
+      height: 50vh;
+      padding: 5px;
+      margin: 0;
+      overflow-y:scroll;
+  }
+
+  #listMessages li {
+    padding: 5px 10px;
+ }
+
+
+
+  #enviar_menssagem {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 300 !important;
+    background-color: #2292A4;
+    color: #fff;
+    margin-left: 10px;
+    border-color: #2292A4 ;
+  }
+
+  #enviar_menssagem:hover {
+    background-color: #333333;
+    border-color: #333333 ;
+  }
+
+  #bottomLine{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 55px;
+    width: 93%;
+  }
+
+  .bottomHr {
+    border-top: 1px solid  #8c8b8b; 
+  }
+
+  .topHr {
+    border-top: 1px solid  #8c8b8b; 
+    width: 96%;
+  }
+
+ 
+  /*
+    * ==========================================================
+    *     ALL CONVERSATIONS
+    * ==========================================================
+    */
+
+  #chats {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+  }
+

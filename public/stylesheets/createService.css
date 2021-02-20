@@ -1,0 +1,96 @@
+   /*
+    * ==========================================================
+    *     FORMS
+    * ==========================================================
+   */ 
+
+   option, select, .ap-input {
+     color: #495057;
+   }
+   
+    .form-control-label {
+      font-size: .9rem;
+      color: #777;
+    }
+    
+    button, input[type='submit'] {
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 300 !important;
+      background-color: #2292A4;
+      border: none;
+    }
+
+    #submitService{
+      margin-top: 15px;
+      background-color: #2292A4 ;
+      border-color: #2292A4 ;
+    }
+
+    #submitService:hover {
+      background-color: #333333;
+      border-color: #333333 ;
+    }
+    
+ 
+    input.input-material {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    input.input-material ~ label {
+      color: #aaa;
+      position: absolute;
+      top: 14px;
+      left: 0;
+      cursor: text;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      font-weight: 300;
+    }
+    
+    .form-group-material {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+
+    #startDate{
+      background-color: white;
+      color: #495057;
+    }
+
+    #endDate{
+      background-color: rgba(0, 0, 0, 0.08);
+      color: #495057;
+    }
+
+   
+
+     /*
+    * ==========================================================
+    *     FORM PAGE
+    * ==========================================================
+    */
+    
+    input {
+      outline: none !important;
+    }
+    
+    .card {
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /*=== Helpers ===*/
+
+    section {
+      padding: 50px 0;
+    }
+    
+    .card-body {
+      padding: 1.25rem;
+    }

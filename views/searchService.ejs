@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DailyHire</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--=======================================  ICON  ==================================================-->
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+      <!--=======================================  NAV BAR  ===============================================-->
+      <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+      <!-- theme stylesheet-->
+      <link rel="stylesheet" href="stylesheets/navBar.css" id="theme-stylesheet">
+      <link rel="stylesheet" href="stylesheets/myServices.css">
+      <!--=======================================  FONT AWESOME  ===========================================-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+      <%- include('partials/navBarWorker') %>
+
+      <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                  <div class="container-fluid">
+                        <h2 class="no-margin-bottom">Search Service</h2>
+                  </div>
+            </header>
+
+            <!-- Forms Section-->
+            <section class="forms">
+                  <div class="container-fluid">
+                        <div class="row">
+                              <!-- Basic Form-->
+                              <div class="col-lg-6">
+                                    <div class="card">
+                                          <div class="card-body">
+
+                                                <h5> Services Available </h5>
+                                                <hr>
+
+                                                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                                      <table class="table" id="tableAvailable">
+                                                            <thead class="thead-dark">
+                                                                  <tr>
+
+                                                                  </tr>
+                                                            </thead>
+
+                                                            <tbody></tbody>
+
+                                                      </table>
+
+                                                </div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+
+
+            <!----------------------- MODAL SERVICES OPEN------------------------------------>
+
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Service</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                    </button>
+                              </div>
+                              <div class="modal-body">
+                                    <div class="row">
+                                          <div class="col-lg-3">
+                                                <label class="form-control-label font-weight-bold">Work Area: </label>
+                                                <label class="form-control-label font-weight-bold">Start Date: </label>
+                                                <label class="form-control-label font-weight-bold">End Date: </label>
+                                                <label class="form-control-label font-weight-bold">Location: </label>
+                                                <label class="form-control-label font-weight-bold">Description: </label>
+                                          </div>
+
+                                          <div class="col-lg-8">
+                                                <label class="form-control-label" id="workArea"></label><br>
+                                                <label class="form-control-label" id="startDate"></label><br>
+                                                <label class="form-control-label" id="endDate"></label><br>
+                                                <label class="form-control-label" id="location"></label><br>
+                                                <label class="form-control-label" id="description"></label><br>
+                                          </div>
+
+                                          <hr style="width: 100%;" />
+
+                                          <label class="form-control-label font-weight-bold col-lg-12">Client: </label>
+
+                                          <table class="table table-borderless" id="workerOpen">
+
+                                          </table>
+
+
+                                    </div>
+
+                              </div>
+
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="completeService">Apply for the
+                                          Service</button>
+                              </div>
+
+                        </div>
+                  </div>
+            </div>
+
+      </div>
+      </div> <!-- Cloose div= class"d-flex" -->
+
+      <!-- Sweet Alert -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <!-- Address Auto-complete -->
+      <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+      <!-- JavaScript files -->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="vendor/popper.js/umd/popper.min.js"> </script>
+      <!--<script src="vendor/jquery/jquery.min.js"></script> -->
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+      <!-- Main File-->
+      <script src="javascripts/navBarWorker.js"></script>
+      <script src="javascripts/searchService.js"></script>
+
+</body>
+
+</html>

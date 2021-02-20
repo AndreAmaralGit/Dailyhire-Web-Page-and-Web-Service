@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DailyHire</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <!--=======================================  ICON  ==================================================-->
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+
+      <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+      <!-- theme stylesheet-->
+      <link rel="stylesheet" href="stylesheets/navBar.css" id="theme-stylesheet">
+      <link rel="stylesheet" href="stylesheets/map.css" id="theme-stylesheet">
+      <!--=======================================  FONT AWESOME  ===========================================-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+      <%- include('partials/navBar') %>
+
+      <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                  <div class="container-fluid">
+                        <h2 class="no-margin-bottom">Map</h2>
+                  </div>
+            </header>
+
+            <!-- Forms Section-->
+            <section class="forms">
+                  <div class="container-fluid">
+                        <div class="row">
+                              <div class="col-lg-2">
+                                    <div class="card">
+                                          <div class="card-body">
+
+
+
+                                                <h6 id="titles"> Work Area </h6>
+                                                <hr>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Alfaiate"
+                                                            id="defaultCheck1" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck1">
+                                                            Alfaiate
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox"
+                                                            value="Canalizador" id="defaultCheck2"
+                                                            onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck2">
+                                                            Canalizador
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox"
+                                                            value="Carpinteiro" id="defaultCheck3"
+                                                            onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck3">
+                                                            Carpinteiro
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox"
+                                                            value="Eletricista" id="defaultCheck4"
+                                                            onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck4">
+                                                            Eletricista
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Estofador"
+                                                            id="defaultCheck5" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck5">
+                                                            Estofador
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Estucador"
+                                                            id="defaultCheck6" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck6">
+                                                            Estucador
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Jardineiro"
+                                                            id="defaultCheck7" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck7">
+                                                            Jardineiro
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox"
+                                                            value="Ladrilhador" id="defaultCheck8"
+                                                            onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck8">
+                                                            Ladrilhador
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Lenhador"
+                                                            id="defaultCheck9" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck9">
+                                                            Lenhador
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Marceneiro"
+                                                            id="defaultCheck10" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck10">
+                                                            Marceneiro
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Marmorista"
+                                                            id="defaultCheck11" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck11">
+                                                            Marmorista
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Mecânico"
+                                                            id="defaultCheck12" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck12">
+                                                            Mecânico
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Pintor"
+                                                            id="defaultCheck13" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck13">
+                                                            Pintor
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Sapateiro"
+                                                            id="defaultCheck14" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck14">
+                                                            Sapateiro
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox"
+                                                            value="Serralheiro" id="defaultCheck15"
+                                                            onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck15">
+                                                            Serralheiro
+                                                      </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value="Vidraceiro"
+                                                            id="defaultCheck16" onchange="filterMarker()">
+                                                      <label class="form-check-label" for="defaultCheck16">
+                                                            Vidraceiro
+                                                      </label>
+                                                </div>
+
+                                                <hr>
+                                                <h6 id="titles2"> Location </h6>
+                                                <hr>
+
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="check"
+                                                            value="" id="2km" onclick="onlyOne(this)"
+                                                            onchange="filterLocation()">
+                                                      <label class="form-check-label" for="defaultCheck1">
+                                                            + 2 km
+                                                      </label>
+                                                </div>
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="check"
+                                                            value="" id="5km" onclick="onlyOne(this)"
+                                                            onchange="filterLocation()">
+                                                      <label class="form-check-label" for="defaultCheck2">
+                                                            + 5 km
+                                                      </label>
+                                                </div>
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="check"
+                                                            value="" id="10km" onclick="onlyOne(this)"
+                                                            onchange="filterLocation()">
+                                                      <label class="form-check-label" for="defaultCheck2">
+                                                            + 10 km
+                                                      </label>
+                                                </div>
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="check"
+                                                            value="" id="20km" onclick="onlyOne(this)"
+                                                            onchange="filterLocation()">
+                                                      <label class="form-check-label" for="defaultCheck2">
+                                                            + 20 km
+                                                      </label>
+                                                </div>
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="check"
+                                                            value="" id="50km" onclick="onlyOne(this)"
+                                                            onchange="filterLocation()">
+                                                      <label class="form-check-label" for="defaultCheck2">
+                                                            + 50 km
+                                                      </label>
+                                                </div>
+                                                <hr>
+
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="col-lg-10">
+                                    <div class="card">
+                                          <div class="card-body">
+
+                                                <div id="gmap"></div>
+
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </section>
+
+
+      </div>
+      </div> <!-- Cloose div= class"d-flex" -->
+
+
+      <!-- Sweet Alert -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <!-- JavaScript files-->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!-- Map -->
+      <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+      <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
+      <!-- Main File-->
+      <script src="javascripts/navBar.js"></script>
+      <script src="javascripts/map.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <title>DailyHire</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--=======================================  ICON  ==================================================-->
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+      <!--=======================================  FONT  ==================================================-->
+      <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+      <!--=======================================  BOOTSTRAP  =============================================-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+            rel="stylesheet">
+      <!--=======================================  CSS  ====================================================-->
+      <link rel="stylesheet" type="text/css" href="stylesheets/util.css">
+      <link rel="stylesheet" type="text/css" href="stylesheets/mainFrontPage.css">
+      <link rel="stylesheet" type="text/css" href="stylesheets/createAcc.css">
+      <!--=======================================  DATEPICKER  ==============================================-->
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+      <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+      <!--===============================================================================================-->
+
+
+</head>
+
+<body>
+
+      <div class="limiter">
+            <div class="container-login100">
+
+
+                  <div class="wrap-login100">
+
+                        <div class="login100-pic js-tilt" data-tilt>
+                              <img src="images/logo.png" alt="IMG">
+
+                              <div class="flex-container" id="addedButtons">
+
+                                    <div class="text-center p-t-136 flex-child">
+                                          <a class="txt2" href="aboutPage">
+                                                About Us
+                                                <i class="fa fa-users m-l-5" aria-hidden="true"></i>
+                                          </a>
+                                    </div>
+
+                                    <div class="text-center p-t-136 flex-child">
+                                          <a class="txt2" href="#" onclick="downloadRDFXML()">
+                                                Linked Data
+                                                <i class="fa fa-download m-l-5" aria-hidden="true"></i>
+                                          </a>
+                                    </div>
+
+                              </div>
+                        </div>
+
+                        <form class="login100-form validate-form" id="idLogin">
+                              <span class="login100-form-title">
+                                    Member Login
+                              </span>
+
+                              <div class="wrap-input100 validate-input" data-validate="User not found">
+                                    <input class="input100 firstForm" type="text" id="emailLogin" name="email1"
+                                          placeholder="Email">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+                              <div class="wrap-input100 validate-input" data-validate="Wrong password">
+                                    <input class="input100 firstForm" type="password" id="passLogin" name="password1"
+                                          placeholder="Password">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+                              <div class="container-login100-form-btn">
+                                    <button class="login100-form-btn" onclick="return login()">
+                                          Login
+                                    </button>
+                              </div>
+
+                              <div id="notifications"></div>
+
+                              <div class="text-center p-t-136">
+                                    <a class="txt2" href="#" onclick="changeToRegister()">
+                                          Create your Account
+                                          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                    </a>
+                              </div>
+                        </form>
+
+                        <!-------------------------  CREATE AN ACCOUNT  ----------------------------->
+
+                        <form class="register-form validate-form2" id="idRegistar" novalidate>
+
+                              <span class="register-form-title">
+                                    Create Account
+                              </span>
+
+                              <div class="wrap-input100 validate-input" data-validate="Name is invalid">
+                                    <input class="input100 secondForm" type="text" id="nameCreate" name="name"
+                                          placeholder="Name">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+                              <div class="wrap-input100 validate-input" data-validate="Address is required">
+                                    <input class="input100 secondForm" id="addressComplete" type="text" name="address"
+                                          placeholder="Address">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-address-card" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+                              <div class="wrap-input100 validate-input"
+                                    data-validate="Valid e-mail is required: ex@abc.xyz" style="z-index: 0;">
+                                    <div data-validate="E-mail already in use">
+                                          <input class="input100 secondForm" type="email" id="emailCreate" name="email"
+                                                placeholder="Email">
+                                          <span class="focus-input100"></span>
+                                          <span class="symbol-input100">
+                                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                          </span>
+                                    </div>
+                              </div>
+
+                              <div class="wrap-input100 validate-input" data-validate="Phone number is invalid"
+                                    style="z-index: 0;">
+                                    <input class="input100 secondForm" id="phoneCreate" type="number" name="phone"
+                                          placeholder="Phone Number">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+
+                              <div class="gender">
+                                    <div class="onoffswitch">
+                                          <input type="checkbox" name="onoffswitch"
+                                                class="onoffswitch-checkbox secondForm" id="myonoffswitch" tabindex="0"
+                                                checked onclick="genderCounter()">
+                                          <label class="onoffswitch-label" for="myonoffswitch">
+                                                <span class="onoffswitch-inner" id="genderCreate"></span>
+                                                <span class="onoffswitch-switch"></span>
+                                          </label>
+                                    </div>
+                              </div>
+
+                              <div class="wrap-input100 dateBirth validate-input" data-validate="Birthdate is required"
+                                    style="z-index: 0;">
+                                    <input class="datepicker input100 secondForm" type="text" id="birthdateCreate"
+                                          name="date" placeholder="Birthdate" autocomplete="off">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+
+                              <div class="wrap-input100 validate-input" data-validate="Password is invalid"
+                                    style="z-index: 0;">
+                                    <input class="input100 secondForm" id="passCreate" type="password" name="password2"
+                                          placeholder="Password">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                          <i class="fa fa-lock" aria-hidden="true"></i>
+                                    </span>
+                              </div>
+
+
+                              <div class="container-login100-form-btn">
+                                    <button class="login100-form-btn" onclick="return createUser()">
+                                          Create
+                                    </button>
+                              </div>
+
+                              <div class="text-center p-t-40">
+                                    <a class="txt2" href="#" onclick="changeToLogin()">
+                                          Already have an account?
+                                          <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                    </a>
+                              </div>
+
+
+                        </form>
+                  </div>
+            </div>
+      </div>
+
+      <!--=======================================  JAVASCRIPT  ==============================================-->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+      <script type="text/javascript" src="javascripts/frontPage.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+
+      <script>
+
+            (function () {
+                  var placesAutocomplete = places({
+                        appId: 'YOUR_API_ID',
+                        apiKey: 'YOUR_API_KEY',
+                        container: document.querySelector('#addressComplete'),
+                  });
+
+            })();
+
+      </script>
+
+</body>
+
+</html>

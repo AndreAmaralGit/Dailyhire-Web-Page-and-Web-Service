@@ -1,0 +1,205 @@
+
+     /*
+    * ==========================================================
+    *     FORM PAGE
+    * ==========================================================
+    */
+    
+    button,
+    input {
+      outline: none !important;
+    }
+    
+    .card {
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /*=== Helpers ===*/
+
+    section {
+      padding: 50px 0;
+    }
+    
+    .card-body {
+      padding: 1.25rem;
+    }
+
+
+
+      /*
+    * ==========================================================
+    *     USER DATA
+    * ==========================================================
+    */
+
+    #uploadWrapper {
+      position: relative;
+  overflow: hidden;
+  display: inline-block;
+    }
+
+    .card-body img {
+      border-radius: 50%; 
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .btn-circle{
+      width: 30px;
+      height: 30px;
+      padding: 6px 0px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.42857;
+      background-color: #2292A4;
+      color: white;
+
+      margin-top: 90px;
+      margin-left: 35px;
+      position: absolute;
+    }
+
+    .btn-circle:hover{
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    #uploadWrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+    /*
+    * ==========================================================
+    *     FORMS
+    * ==========================================================
+   */ 
+
+   /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+   option, select, .ap-input {
+    color: #495057;
+  }
+  
+   .form-control-label {
+     font-size: .9rem;
+     color: #777;
+   }
+   
+   button, input[type='submit'] {
+     cursor: pointer;
+     font-family: inherit;
+     font-weight: 300 !important;
+     background-color: #2292A4;
+     border: none;
+   }
+
+   #submitService{
+     margin-top: 15px;
+     background-color: #2292A4 ;
+     border-color: #2292A4 ;
+   }
+
+   #submitService:hover {
+     background-color: #333333;
+     border-color: #333333 ;
+   }
+   
+
+   input.input-material {
+     width: 100%;
+     border: none;
+     border-bottom: 1px solid #eee;
+     padding: 10px 0;
+   }
+
+   input.input-material ~ label {
+     color: #aaa;
+     position: absolute;
+     top: 14px;
+     left: 0;
+     cursor: text;
+     -webkit-transition: all 0.2s;
+     transition: all 0.2s;
+     font-weight: 300;
+   }
+   
+   .form-group-material {
+     position: relative;
+     margin-bottom: 30px;
+   }
+   
+
+   #startDate{
+     background-color: white;
+     color: #495057;
+   }
+
+
+   .field-icon {
+    float: right;
+    margin-right: 20px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+    /*
+    * ==========================================================
+    *     RATINGS
+    * ==========================================================
+   */ 
+
+   
+   .stars-outer, .stars-outer2 {
+    display: inline-block;
+    position: relative;
+  }
+   
+  .stars-outer::before, .stars-outer2::before {
+    font-family: FontAwesome;
+    font-weight: 900;
+    content: "\f005 \f005 \f005 \f005 \f005";
+    
+  }
+   
+  .stars-inner, .stars-inner2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+   
+  .stars-inner::before,  .stars-inner2::before {
+    font-family: FontAwesome;
+    font-weight: 900;
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: orange;
+  }
+
+  #ratingOpen {
+    margin-left: 5px;
+  }
+

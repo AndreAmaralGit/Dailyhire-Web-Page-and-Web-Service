@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>RDF Service</title>
+</head>
+
+<body>
+
+      <h2 style="margin-left: 10px;">Service</h2>
+
+      <div style="padding-left: 5%;">
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">identifier: </h3>
+                  <p style="padding-top: 5px;" id="identifier"> </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">serviceType: </h3>
+                  <p style="padding-top: 5px;" id="serviceType"> </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">startDate: </h3>
+                  <p style="padding-top: 5px;" id="startDate"> null</p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">endDate: </h3>
+                  <p style="padding-top: 5px;" id="endDate"> null</p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">description: </h3>
+                  <p style="padding-top: 5px;" id="description"> null </p>
+            </div>
+
+            <div style="display: flex; width: 30%; vertical-align: middle;">
+                  <h3 style="margin-right: 10px;">status: </h3>
+                  <p style="padding-top: 5px;" id="status"> </p>
+            </div>
+
+
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+      <script>
+
+            $(document).ready(function () {
+
+                  var dadosService = {
+                        "_id": window.location.pathname.substring(9)
+                  };
+
+                  $.ajax({
+                        url: "http://localhost:8080/services/findService",
+                        type: "POST", //METODO DA API
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(dadosService),
+                        success: function (response) {
+
+
+                              document.getElementById('identifier').innerHTML = response._id
+                              document.getElementById('serviceType').innerHTML = response.workArea
+
+                              if (!(response.description == "")) {
+                                    document.getElementById('description').innerHTML = response.description
+                              }
+
+                              document.getElementById('status').innerHTML = response.state
+
+                              document.getElementById('startDate').innerHTML = convertDate(response.startDate)
+                              document.getElementById('endDate').innerHTML = convertDate(response.endDate)
+
+
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+
+                        }
+                  });
+
+            });
+
+            function n(n) {
+                  return n > 9 ? "" + n : "0" + n;
+            }
+
+            function convertDate(date) {
+
+                  var dateToSplit = date.substring(0, 10);
+                  var dateSplit = dateToSplit.split("-");
+                  var finalDate = dateSplit[0] + "-" + dateSplit[1] + "-" + (n(+dateSplit[2] + 1));
+                  return finalDate;
+            }
+
+
+      </script>
+
+</body>
+
+</html>
