@@ -1,6 +1,6 @@
 # Dailyhire Web Page and Web Service
 
-In this repository, you can find the Dailyhire Web Page and Web Service. Dailyhire also has a mobilwe application allocated in the following repository: "https://github.com/AndreAmaralGit/Dailyhire-app".
+In this repository, you can find the Dailyhire Web Page and Web Service. Dailyhire also has a mobilwe application allocated in the following repository: "https://github.com/AndreAmaralGit/DailyHire-App".
 
 This project aims to bring unskilled workers closer to their potential customers. An application profile was developed, which makes it possible to export Linked Data on the home page. Only data defined as public is exported, via an RDF_XML file. The development of this project was based on the ideologies of the Social and Solidarity Economy.
 
