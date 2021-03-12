@@ -212,7 +212,6 @@ function createUser() {
             for (var i = 0; i < feedback["errors"].length; i++) {
 
                 var param = feedback["errors"][i]["param"];
-                console.log(param);
 
                 if (param == "name") {
 
