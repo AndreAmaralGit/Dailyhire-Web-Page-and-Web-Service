@@ -154,8 +154,6 @@ function createUser() {
         $(thisAlert).removeClass('alert-validate');
     }
 
-    showValidate2(document.getElementById('nameCreate'));
-
     //////////////////////////////////////////////////////////////////////
 
     var result = isOdd(counter);
