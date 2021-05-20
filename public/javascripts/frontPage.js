@@ -398,7 +398,7 @@ function downloadRDFXML() {
 
     for (var i = 0; i < myObjAllServices.length; i++) {
 
-        servicexml = servicexml + '<rdf:Description rdf:about="http://localhost:8080/service/' + myObjAllServices[i]._id + '"></rdf>' + '\n' +
+        servicexml = servicexml + '<rdf:Description rdf:about="http://localhost:8080/service/' + myObjAllServices[i]._id + '">' + '\n' +
             '<rdf:type rdf:resource="https://schema.org/Service"/>' + '\n' +
             '<dct:identifier rdf:resource="' + myObjAllServices[i]._id + '"/>' + '\n' +
             '<schema:serviceType rdf:datatype="http://www.w3.org/TR/xmlschema11-2/#string"> ' + myObjAllServices[i].workArea + '</schema:serviceType>' + '\n' +
